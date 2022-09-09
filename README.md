@@ -74,5 +74,5 @@ Branch: submit-animal-with-sightings
 
 Acceptance Criteria
 
-- Can create new animal along with sighting data in a single API request
+- Can create new animal along with sighting data in a single API request (done)
   - Hint: Look into accepts_nested_attributes_for
