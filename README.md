@@ -64,8 +64,8 @@ Validations will require specs in spec/models and the controller methods will re
 - Can see validation errors if an animal doesn't include a common name and scientific binomial (done)
 - Can see validation errors if a sighting doesn't include latitude, longitude, or a date (done)
 - Can see a validation error if an animal's common name exactly matches the scientific binomial (done)
-- Can see a validation error if the animal's common name and scientific binomial are not unique
-- Can see a status code of 422 when a post request can not be completed because of validation errors
+- Can see a validation error if the animal's common name and scientific binomial are not unique (done)
+- Can see a status code of 422 when a post request can not be completed because of validation errors (done)
   - Hint: Handling Errors in an API Application the Rails Way
 
 Story 5: In order to increase efficiency, as a user of the API, I need to add an animal and a sighting at the same time.

@@ -21,10 +21,16 @@ RSpec.describe Animal, type: :model do
     expect(animal.errors[:common_name].first).to eq('The names cannot be equal.')
   end
 
-  it 'must have a unique common_name' do
+  it 'must have a unique common name' do
     animal1 = Animal.create(common_name: 'Mule Deer', scientific_binomial: 'Odocoileus hemionus')
-    animal2 = Animal.create(common_name: 'Mule Deer', scientific_binomial: 'Odocoileus hemionus')
-    expect(animal2).to_not be_valid
+    animal2 = Animal.create(common_name: 'Mule Deer', scientific_binomial: 'Odocoileus')
+    expect(animal2.errors[:common_name].first).to eq('has already been taken')
+  end
+
+  it 'must have a unique scientific binomial' do
+    animal1 = Animal.create(common_name: 'Mule Deer', scientific_binomial: 'Odocoileus hemionus')
+    animal2 = Animal.create(common_name: 'Mule', scientific_binomial: 'Odocoileus hemionus')
+    expect(animal2.errors[:scientific_binomial].first).to eq('has already been taken')
   end
   
 end
